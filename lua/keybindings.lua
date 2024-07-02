@@ -40,7 +40,6 @@ map("n", "s=", "<C-w>=", opt)
 map("n", "<leader>t", ":ToggleTerm<CR>", opt)
 map("t", "<Esc>", "<C-\\><C-n>", opt)
 map("n", "tf", ":ToggleTerm direction=float<CR>", opt)
-map("n", "tb", ":ToggleTerm direction=tab<CR>", opt)
 
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)
@@ -95,10 +94,6 @@ map("n", "<leader>bb", ":GoBreakToggle<CR>", opt)
 map("n", "<leader>dd", ":GoDebug<CR>", opt)
 map("n", "<leader>de", ":GoDebug -s<CR>", opt)
 
--- comment
-map("n", "<C-/>", "gcc", opt)
-map("v", "<C-/>", "gc", opt)
-
 -- leap
 map("n", "<leader>s", "<Plug>(leap)", opt)
 map("n", "S", "<Plug>(leap-backward)", opt)
@@ -120,7 +115,6 @@ vim.keymap.set(
 )
 
 -- 插件快捷键
-require("plugin-config.codeium")
 local pluginKeys = {}
 
 -- Telescope 列表中 插入模式快捷键
@@ -147,7 +141,6 @@ pluginKeys.nvimTreeList = {
 	-- 打开文件或文件夹
 	{ key = { "<CR>", "<2-LeftMouse>" }, action = "edit" },
 	-- 分屏打开文件
-	{ key = "<C-h>", action = "vsplit" },
 	{ key = "<C-v>", action = "split" },
 	-- 显示隐藏文件
 	{ key = "i", action = "toggle_custom" }, -- 对应 filters 中的 custom (node_modules)

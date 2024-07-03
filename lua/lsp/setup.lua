@@ -4,6 +4,11 @@ require("mason-lspconfig").setup({
 	ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "cmake", "bashls" },
 })
 
+local g = vim.g
+g.vsnip_snippet_dirs = {
+	os.getenv("HOME") .. "/.local/share/nvim/lazy/friendly-snippets/snippets/",
+}
+
 function LspKeybind(client, bufnr)
 	-- 禁用格式化功能，交给专门插件插件处理
 	client.server_capabilities.documentFormattingProvider = false
@@ -21,7 +26,6 @@ function GoLspKeybind(client, bufnr)
 			delta = false,
 		},
 		legend = {
-			-- from https://github.com/golang/tools/blob/master/gopls/internal/lsp/semantic.go#L981
 			tokenTypes = {
 				"namespace",
 				"type",
@@ -194,17 +198,17 @@ nvim_lsp.marksman.setup({
 nvim_lsp.clangd.setup({
 	on_attach = LspKeybind,
 	cmd = {
-        "clangd",
-        "-j=12",
+		"clangd",
+		"-j=12",
 		"--background-index",
 		"--clang-tidy",
-        "--pch-storage=memory",
+		"--pch-storage=memory",
 		"--header-insertion=iwyu",
 		"--completion-style=detailed",
-        "--compile-commands-dir=build",
-        "--pch-storage=disk",
-        "--pch-storage=memory",
-	  },
+		"--compile-commands-dir=build",
+		"--pch-storage=disk",
+		"--pch-storage=memory",
+	},
 })
 
 nvim_lsp.cmake.setup({

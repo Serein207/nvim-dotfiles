@@ -17,9 +17,9 @@ cmp.setup({
 	},
 	-- 补全源
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
-		-- For vsnip users.
 		{ name = "vsnip" },
+		{ name = "nvim_lsp" },
+		{ name = "nvim_lsp_signature_help" },
 	}, {
 		{ name = "buffer" },
 		{ name = "path" },

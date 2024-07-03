@@ -40,6 +40,8 @@ null_ls.setup({
 		formatting.clang_format,
 		-- bash formatting
 		formatting.shfmt,
+        -- cmake formatting
+        formatting.gersemi,
 	},
 	-- 保存自动格式化
 	--on_attach = function(client)

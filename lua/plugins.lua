@@ -52,13 +52,13 @@ require("lazy").setup({
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
-	{ "nvimdev/lspsaga.nvim", event = "BufEnter" },
 	-- terminal
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	-- format
 	{ "nvimtools/none-ls.nvim", dependencies = "nvim-lua/plenary.nvim" },
 	-- 补全
 	"hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-vsnip",
 	"hrsh7th/vim-vsnip",
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-buffer",
@@ -66,10 +66,12 @@ require("lazy").setup({
 	"hrsh7th/cmp-cmdline",
 	"mortepau/codicons.nvim",
 	"lukas-reineke/cmp-under-comparator",
-
+	"hrsh7th/cmp-nvim-lsp-signature-help",
 	-- 常见片段
 	"rafamadriz/friendly-snippets",
+	-- UI增强
 	"onsails/lspkind-nvim",
+	{ "nvimdev/lspsaga.nvim", event = "BufEnter" },
 	-- gitplugin
 	"tpope/vim-fugitive", -- 显示 git blame，实现一些基本操作的快捷执行
 	"rhysd/git-messenger.vim", -- 利用 git blame 显示当前行的 commit message
@@ -94,22 +96,22 @@ require("lazy").setup({
 		init = function()
 			local loaded = false
 			local function check()
-			  local cwd = vim.uv.cwd()
-			  if vim.fn.filereadable(cwd .. "/CMakeLists.txt") == 1 then
-				require("lazy").load({ plugins = { "cmake-tools.nvim" } })
-				loaded = true
-			  end
+				local cwd = vim.uv.cwd()
+				if vim.fn.filereadable(cwd .. "/CMakeLists.txt") == 1 then
+					require("lazy").load({ plugins = { "cmake-tools.nvim" } })
+					loaded = true
+				end
 			end
 			check()
 			vim.api.nvim_create_autocmd("DirChanged", {
-			  callback = function()
-				if not loaded then
-				  check()
-				end
-			  end,
+				callback = function()
+					if not loaded then
+						check()
+					end
+				end,
 			})
-		  end,
-        lazy = true,
+		end,
+		lazy = true,
 	},
 	-- auto save
 	"Pocco81/auto-save.nvim",

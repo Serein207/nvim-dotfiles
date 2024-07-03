@@ -54,7 +54,6 @@ require("lazy").setup({
 	"neovim/nvim-lspconfig",
 	{ "nvimdev/lspsaga.nvim", event = "BufEnter" },
 	-- terminal
-	"voldikss/vim-floaterm",
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	-- format
 	{ "nvimtools/none-ls.nvim", dependencies = "nvim-lua/plenary.nvim" },
@@ -71,7 +70,7 @@ require("lazy").setup({
 	-- 常见片段
 	"rafamadriz/friendly-snippets",
 	"onsails/lspkind-nvim",
-	-- git
+	-- gitplugin
 	"tpope/vim-fugitive", -- 显示 git blame，实现一些基本操作的快捷执行
 	"rhysd/git-messenger.vim", -- 利用 git blame 显示当前行的 commit message
 	"lewis6991/gitsigns.nvim",
@@ -92,6 +91,25 @@ require("lazy").setup({
 	-- cpp
 	{
 		"Civitasv/cmake-tools.nvim",
+		init = function()
+			local loaded = false
+			local function check()
+			  local cwd = vim.uv.cwd()
+			  if vim.fn.filereadable(cwd .. "/CMakeLists.txt") == 1 then
+				require("lazy").load({ plugins = { "cmake-tools.nvim" } })
+				loaded = true
+			  end
+			end
+			check()
+			vim.api.nvim_create_autocmd("DirChanged", {
+			  callback = function()
+				if not loaded then
+				  check()
+				end
+			  end,
+			})
+		  end,
+        lazy = true,
 	},
 	-- auto save
 	"Pocco81/auto-save.nvim",

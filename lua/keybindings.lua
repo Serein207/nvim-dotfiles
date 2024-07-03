@@ -104,7 +104,7 @@ map("n", "<leader>f", ":lua vim.lsp.buf.format { async = true }<CR>", opt)
 vim.keymap.set(
 	{ "v", "n", "i", "t" },
 	"<F5>",
-	"<cmd>wa<CR><cmd>if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeRun')|else|call execute('TermExec cmd=!!')|endif<CR>",
+	"<cmd>wa<CR><cmd>if luaeval('require\"cmake-tools\".is_cmake_project()')|call execute('CMakeRun')|else|call execute('TermExec cmd=\\<C-c>')|endif<CR>",
 	{ silent = true }
 )
 vim.keymap.set(

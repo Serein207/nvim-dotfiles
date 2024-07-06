@@ -81,15 +81,6 @@ require("lazy").setup({
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
 	"theHamsta/nvim-dap-virtual-text",
-	-- go dap
-	{
-		"ray-x/go.nvim",
-		dependencies = { -- optional packages
-			"ray-x/guihua.lua",
-		},
-		event = { "CmdlineEnter" },
-		ft = { "go", "gomod" },
-	},
 	-- cpp
 	{
 		"Civitasv/cmake-tools.nvim",
@@ -115,10 +106,6 @@ require("lazy").setup({
 	},
 	-- auto save
 	"Pocco81/auto-save.nvim",
-	-- leetcode
-	{ "kawre/leetcode.nvim", dependencies = {
-		"MunifTanjim/nui.nvim",
-	} },
 	-- markdown
 	{
 		"iamcco/markdown-preview.nvim",

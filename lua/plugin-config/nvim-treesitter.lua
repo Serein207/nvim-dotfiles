@@ -12,10 +12,6 @@ treesitter.setup({
 		"vim",
 		"lua",
 		"rust",
-		"go",
-		"gomod",
-		"gosum",
-		"gowork",
 	},
 	-- 启用代码高亮模块
 	highlight = {
@@ -40,20 +36,3 @@ treesitter.setup({
 		},
 	},
 })
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.gotmpl = {
-	install_info = {
-		url = "https://github.com/ngalaiko/tree-sitter-go-template",
-		files = { "src/parser.c" },
-	},
-	filetype = "gotmpl",
-	used_by = { "gohtmltmpl", "gotexttmpl", "gotmpl", "yaml", "tpl" },
-}
-
-parser_config.go_zero_api = {
-	install_info = {
-		url = "~/Documents/goctl.nvim",
-		files = { "src/parser.c" },
-	},
-	filetype = "api",
-}

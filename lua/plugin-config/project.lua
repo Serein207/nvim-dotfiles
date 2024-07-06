@@ -9,12 +9,7 @@ vim.g.nvim_tree_respect_buf_cwd = 1
 
 project.setup({
 	detection_methods = { "pattern" },
-	projects = {
-		"~/Projects/*",
-		"~/.config/nvim",
-		"~/Projects/study/*",
-	},
-	patterns = { ".git", "_darcs", "Makefile", "package.json", ".sln", "CMakeLists.txt" },
+	patterns = { ".git", "_darcs", "Makefile", "package.json", ".sln", "CMakeLists.txt", "cargo.toml", "Hyprland.conf" },
 })
 
 local status, telescope = pcall(require, "telescope")

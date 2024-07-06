@@ -13,8 +13,6 @@ null_ls.setup({
 		formatting.shfmt,
 		-- StyLua
 		formatting.stylua,
-		-- go fmt
-		formatting.goimports,
 		-- frontend
 		formatting.prettier.with({
 			filetypes = {

@@ -57,6 +57,7 @@ require("lazy").setup({
 	-- format
 	{ "nvimtools/none-ls.nvim", dependencies = "nvim-lua/plenary.nvim" },
 	-- 补全
+    "github/copilot.vim",
 	"hrsh7th/nvim-cmp",
     "hrsh7th/cmp-vsnip",
 	"hrsh7th/vim-vsnip",

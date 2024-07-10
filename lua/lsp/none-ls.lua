@@ -10,6 +10,13 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		-- Formatting ---------------------
+		-- cpp
+		formatting.clang_format.with({
+			extra_args = {
+				"-style=file:" .. vim.fn.expand(".clang-format"),
+			},
+		}),
+		-- shel format
 		formatting.shfmt,
 		-- StyLua
 		formatting.stylua,
@@ -34,12 +41,10 @@ null_ls.setup({
 			extra_filetypes = { "njk" },
 			prefer_local = "node_modules/.bin",
 		}),
-		-- cpp formatting
-		formatting.clang_format,
 		-- bash formatting
 		formatting.shfmt,
-        -- cmake formatting
-        formatting.gersemi,
+		-- cmake formatting
+		formatting.gersemi,
 	},
 	-- 保存自动格式化
 	--on_attach = function(client)

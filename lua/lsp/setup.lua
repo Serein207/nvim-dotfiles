@@ -126,6 +126,7 @@ nvim_lsp.clangd.setup({
 	on_attach = LspKeybind,
 	cmd = {
 		"clangd",
+		"--offset-encoding=utf-16",
 		"-j=12",
 		"--background-index",
 		"--clang-tidy",

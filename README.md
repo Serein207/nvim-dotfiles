@@ -40,6 +40,10 @@ Use `<C-S-c>` and `<C-S-v>` to copy and paste text with the system clipboard.
 | `q`         | Quit              |
 | `qq`        | Quit not Save     |
 
+### Multi Cursor
+
+refer [here](https://github.com/mg979/vim-visual-multi)
+
 ### Window Mappings
 
 | Key Mapping | Description                       |

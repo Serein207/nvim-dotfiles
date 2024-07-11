@@ -57,7 +57,7 @@ require("lazy").setup({
 	-- format
 	{ "nvimtools/none-ls.nvim", dependencies = "nvim-lua/plenary.nvim" },
 	-- 补全
-    "github/copilot.vim",
+    "zbirenbaum/copilot.lua",
 	"hrsh7th/nvim-cmp",
     "hrsh7th/cmp-vsnip",
 	"hrsh7th/vim-vsnip",
@@ -82,6 +82,8 @@ require("lazy").setup({
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
 	"theHamsta/nvim-dap-virtual-text",
+    -- multi cursor
+    "mg979/vim-visual-multi",
 	-- cpp
 	{
 		"Civitasv/cmake-tools.nvim",

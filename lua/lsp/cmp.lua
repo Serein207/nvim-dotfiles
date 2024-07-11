@@ -42,16 +42,16 @@ cmp.setup({
 			select = false,
 			behavior = cmp.ConfirmBehavior.Insert,
 		}),
-		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			else
-				fallback()
-			end
-		end, {
-			"i",
-			"s",
-		}),
+		-- ["<Tab>"] = cmp.mapping(function(fallback)
+		-- 	if cmp.visible() then
+		-- 		cmp.select_next_item()
+		-- 	else
+		-- 		fallback()
+		-- 	end
+		-- end, {
+		-- 	"i",
+		-- 	"s",
+		-- }),
 		-- 如果窗口内容太多，可以滚动
 		["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),

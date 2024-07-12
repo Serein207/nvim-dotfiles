@@ -44,6 +44,15 @@ Use `<C-S-c>` and `<C-S-v>` to copy and paste text with the system clipboard.
 
 refer [here](https://github.com/mg979/vim-visual-multi)
 
+### Copilot
+
+type `: CopilotAuth` to use copilot
+
+| Key Mapping | Description     |
+| ----------- | --------------- |
+| `<C-CR>`    | Accept One Line |
+| `<A-CR>`    | Accept All      |
+
 ### Window Mappings
 
 | Key Mapping | Description                       |
@@ -73,7 +82,7 @@ refer [here](https://github.com/mg979/vim-visual-multi)
 | `<leader>t`  | Open Terminal at Bottom |
 | `<leader>tf` | Open Terminal Float     |
 
-## Bufferline Mappings
+### Bufferline Mappings
 
 | Key Mapping  | Description             |
 | ------------ | ----------------------- |
@@ -123,6 +132,13 @@ refer [here](https://github.com/mg979/vim-visual-multi)
 | `<C-u>` `<C-d>`     | Preview Scrolling             |
 | `<C-n>` `<C-p>`     | History                       |
 | `<C-c>`             | Close Window                  |
+
+### Complete Menu
+
+| Key Mapping     | Description        |
+| --------------- | ------------------ |
+| `<C-j>` `<C-k>` | Move Select Cursor |
+| `<CR>`          | Confirm Selection  |
 
 ### LSP Mappings
 

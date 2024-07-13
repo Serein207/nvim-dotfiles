@@ -6,7 +6,6 @@
 <span><img src = "images/image3.png" width = "45%"></span>
 </div>
 
-
 ## How to Use
 
 1. Clone this repository to your local machine.
@@ -27,7 +26,7 @@ The `lua/utils.lua` file contains the configuration for neovide, you can modify 
 
 The default font is `Monaco Nerd Font Mono`, you can change it to your favorite font.
 
-Use `<C-S-c>` and `<C-S-v>` to copy and paste text with the system clipboard. 
+Use `<C-S-c>` and `<C-S-v>` to copy and paste text with the system clipboard.
 
 ## Key Mappings
 
@@ -77,10 +76,12 @@ type `: CopilotAuth` to use copilot
 
 ### Terminal Mappings
 
-| Key Mapping  | Description             |
-| ------------ | ----------------------- |
-| `<leader>t`  | Open Terminal at Bottom |
-| `<leader>tf` | Open Terminal Float     |
+| Key Mapping  | Description                |
+| ------------ | -------------------------- |
+| `<leader>t`  | Open Terminal              |
+| `<leader>tf` | Open Terminal Float        |
+| `<leader>th` | Open Terminal Horizontally |
+| `<leader>tv` | Open Terminal Vertically   |
 
 ### Bufferline Mappings
 
@@ -175,4 +176,3 @@ type `: CopilotAuth` to use copilot
 | Visual | `>`         | Indent Right          |
 | Visual | `J`         | Select Row Down       |
 | Visual | `K`         | Select Row Up         |
-

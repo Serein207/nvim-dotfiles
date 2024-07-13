@@ -1,17 +1,17 @@
 require("toggleterm").setup({
 	float_opts = {
 		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-        winblend = 8,
+		winblend = 8,
 	},
 	highlights = {
-        Normal = {
-            link = 'Normal'
-        },
+		Normal = {
+			link = "Normal",
+		},
 		FloatBorder = {
 			link = "FloatBorder",
 		},
-        CursorLine = {
-            link = 'Visual'
-        },
+		CursorLine = {
+			link = "Visual",
+		},
 	},
 })

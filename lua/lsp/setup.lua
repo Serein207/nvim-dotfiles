@@ -1,7 +1,13 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
 	automatic_installation = true,
-	ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "cmake", "bashls" },
+	ensure_installed = {
+		"lua_ls",
+		"rust_analyzer",
+		"clangd",
+		"cmake",
+		"bashls",
+	},
 })
 
 local g = vim.g
@@ -101,11 +107,6 @@ nvim_lsp.rust_analyzer.setup({
 	on_attach = LspKeybind,
 })
 
--- astro
-nvim_lsp.astro.setup({
-	on_attach = LspKeybind,
-})
-
 nvim_lsp.tsserver.setup({
 	on_attach = LspKeybind,
 	filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
@@ -145,5 +146,9 @@ nvim_lsp.cmake.setup({
 })
 
 nvim_lsp.bashls.setup({
+	on_attach = LspKeybind,
+})
+
+nvim_lsp.slint_lsp.setup({
 	on_attach = LspKeybind,
 })

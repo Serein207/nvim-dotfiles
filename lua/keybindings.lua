@@ -11,8 +11,8 @@ map("v", "<A-n>", "<Esc>", opt)
 -- 取消 s 默认功能
 map("n", "s", "", opt)
 -- 分屏快捷键
-map("n", "sv", "<C-w>s", opt)
-map("n", "sh", "<C-w>v", opt)
+map("n", "sv", "<C-w>v", opt)
+map("n", "sh", "<C-w>s", opt)
 -- 关闭当前laga
 map("n", "sc", "<C-w>c", opt)
 -- 关闭其他
@@ -40,6 +40,8 @@ map("n", "s=", "<C-w>=", opt)
 map("n", "<leader>t", ":ToggleTerm<CR>", opt)
 map("t", "<Esc>", "<C-\\><C-n>", opt)
 map("n", "tf", ":ToggleTerm direction=float<CR>", opt)
+map("n", "th", ":ToggleTerm direction=horizontal size = 10<CR>", opt)
+map("n", "tv", ":ToggleTerm direction=vertical size=60<CR>", opt)
 
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)

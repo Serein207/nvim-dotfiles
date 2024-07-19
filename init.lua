@@ -1,37 +1,55 @@
-require("basic")
-require("keybindings")
-require("plugins")
-require("colorscheme")
-require("plugin-config.devicons")
-require("plugin-config.notify")
-require("plugin-config.autopairs")
-require("plugin-config.nvim-tree")
-require("plugin-config.bufferline")
-require("plugin-config.lualine")
-require("plugin-config.telescope")
-require("plugin-config.dashboard")
-require("plugin-config.project")
-require("plugin-config.nvim-treesitter")
-require("plugin-config.indent_blankline")
-require("plugin-config.gitsigns")
-require("plugin-config.codicons")
-require("plugin-config.autosave")
-require("plugin-config.comment")
-require("plugin-config.scrollview")
-require("plugin-config.leap")
-require("plugin-config.neoscroll")
-require("plugin-config.noice")
-require("plugin-config.terminal")
-require("plugin-config.aerial")
-require("plugin-config.which-key")
-require("plugin-config.others")
-require("plugin-config.copilot")
-require("lsp.setup")
-require("lsp.cmp")
-require("lsp.ui")
-require("lsp.saga")
-require("lsp.none-ls")
-require("lsp.kind")
-require("lsp.hover")
-require("lsp.cmake-tools")
-require("utils")
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+if not vim.loop.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+local lazy_config = require "configs.lazy"
+
+-- load plugins
+require("lazy").setup({
+  {
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
+    config = function()
+      require "options"
+    end,
+  },
+
+  { import = "plugins" },
+}, lazy_config)
+
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
+
+require "nvchad.autocmds"
+require "neovide"
+require "mappings"
+require "configs.dap.cpp"
+require "configs.lsp.setup"
+require "configs.lsp.cmp"
+require "configs.lsp.formatting"
+require "configs.lsp.hover"
+require "configs.lsp.cmake"
+require "configs.nvim-treesitter"
+require "configs.nvim-tree"
+require "configs.leap"
+require "configs.notify"
+require "configs.noice"
+require "configs.aerial"
+require "configs.telescope"
+require "configs.gitsigns"
+require "configs.wilder"
+require "configs.copilot"
+require "configs.project"

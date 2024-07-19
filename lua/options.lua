@@ -1,3 +1,5 @@
+require "nvchad.options"
+
 -- jkhl 移动时光标周围保留8行
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
@@ -86,4 +88,3 @@ vim.opt.foldlevel = 99
 vim.opt.termguicolors = true
 
 vim.o.pumblend = 15
-

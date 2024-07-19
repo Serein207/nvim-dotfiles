@@ -1,10 +1,8 @@
 <h1 align="center">nvim dotfiles</h1>
 
-<div align="center"><img src = "images/image1.png"></div>
-<div align="center">
-<span ><img src = "images/image2.png" width = "45%"></span>
-<span><img src = "images/image3.png" width = "45%"></span>
-</div>
+<div align="center"><img src = "images/image.png"></div>
+
+My config is based on [Nvchad](https://nvchad.com)
 
 ## How to Use
 
@@ -20,9 +18,11 @@ git clone https://github.com/Serein207/nvim-dotfiles.git ~/.config/nvim
 nvim
 ```
 
+3. Run command `:MasonInstallAll`.
+
 ## Use Neovide
 
-The `lua/utils.lua` file contains the configuration for neovide, you can modify it according to your needs.
+The `lua/neovide.lua` file contains the configuration for neovide, you can modify it according to your needs.
 
 The default font is `Monaco Nerd Font Mono`, you can change it to your favorite font.
 
@@ -30,14 +30,18 @@ Use `<C-S-c>` and `<C-S-v>` to copy and paste text with the system clipboard.
 
 ## Key Mappings
 
+The entire mappings are defined in `lua/mappings.lua`.
+
 ### Basic Mappings
 
-| Key Mapping | Description       |
-| ----------- | ----------------- |
-| `jj`        | Enter Normal Mode |
-| `<Esc>`     | Enter Normal Mode |
-| `q`         | Quit              |
-| `qq`        | Quit not Save     |
+| Key Mapping  | Description         |
+| ------------ | ------------------- |
+| `<leader>ch` | Toggle nvcheatsheet |
+| `jj`         | Enter Normal Mode   |
+| `<Esc>`      | Enter Normal Mode   |
+| `q`          | Quit                |
+| `qq`         | Quit not Save       |
+| `<C-S>`      | Save                |
 
 ### Multi Cursor
 
@@ -45,7 +49,7 @@ refer [here](https://github.com/mg979/vim-visual-multi)
 
 ### Copilot
 
-type `: CopilotAuth` to use copilot
+type `:CopilotAuth` to use copilot
 
 | Key Mapping | Description     |
 | ----------- | --------------- |
@@ -76,12 +80,12 @@ type `: CopilotAuth` to use copilot
 
 ### Terminal Mappings
 
-| Key Mapping  | Description                |
-| ------------ | -------------------------- |
-| `<leader>t`  | Open Terminal              |
-| `<leader>tf` | Open Terminal Float        |
-| `<leader>th` | Open Terminal Horizontally |
-| `<leader>tv` | Open Terminal Vertically   |
+| Key Mapping | Description                |
+| ----------- | -------------------------- |
+| `<leader>t` | Open Terminal              |
+| `tf`        | Open Terminal Float        |
+| `th`        | Open Terminal Horizontally |
+| `tv`        | Open Terminal Vertically   |
 
 ### Bufferline Mappings
 
@@ -89,7 +93,7 @@ type `: CopilotAuth` to use copilot
 | ------------ | ----------------------- |
 | `<C-h>`      | Switch to Left Tab      |
 | `<C-l>`      | Switch to Right Tab     |
-| `<C-w>`      | Close Current Tab       |
+| `<leader>x`  | Close Current Tab       |
 | `<leader>bl` | Buffer Line Close Right |
 | `<leader>bh` | Buffer Line Close Left  |
 | `<leader>bc` | Buffer Line Close       |
@@ -109,7 +113,7 @@ type `: CopilotAuth` to use copilot
 | `<A-m>`     | Toggle NERDTree            |
 | `<C-v>`     | Open File in Split Window  |
 | `<CR>`      | Open File or Folder        |
-| `i`         | Toggle Hidden Files        |
+| `i`         | Toggle gitignore Files     |
 | `.`         | Toggle Dotfiles            |
 | `<F5>`      | Refresh NERDTree           |
 | `a`         | Create File or Folder      |
@@ -122,17 +126,17 @@ type `: CopilotAuth` to use copilot
 
 ### Telescope Mappings
 
-| Key Mapping         | Description                   |
-| ------------------- | ----------------------------- |
-| `<leader><leader>p` | Find Files                    |
-| `<leader><leader>f` | Find keyword                  |
-| `<leader>pp`        | Find Projects                 |
-| `<leader>m`         | Find Notification or Messages |
-| `<leader>L`         | Find CMake Project Files      |
-| `<C-j>` `<C-k>`     | Move Cursor                   |
-| `<C-u>` `<C-d>`     | Preview Scrolling             |
-| `<C-n>` `<C-p>`     | History                       |
-| `<C-c>`             | Close Window                  |
+| Key Mapping     | Description                   |
+| --------------- | ----------------------------- |
+| `<leader>ff`    | Find Files                    |
+| `<leader>fw`    | Find keyword                  |
+| `<leader>pr`    | Find Projects                 |
+| `<leader>no`    | Find Notification or Messages |
+| `<leader>cm`    | Find CMake Project Files      |
+| `<C-j>` `<C-k>` | Move Cursor                   |
+| `<C-u>` `<C-d>` | Preview Scrolling             |
+| `<C-n>` `<C-p>` | History                       |
+| `<C-c>`         | Close Window                  |
 
 ### Complete Menu
 

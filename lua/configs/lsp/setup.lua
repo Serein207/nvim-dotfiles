@@ -19,6 +19,7 @@ require("mason").setup {
 
 local base = require "nvchad.configs.lspconfig"
 local on_init = base.on_init
+local on_attach = base.on_attach
 local capabilities = base.capabilities
 
 local lspconfig = require "lspconfig"
@@ -33,6 +34,7 @@ function LspKeybind(client, bufnr)
   end
   -- 绑定快捷键
   require("mappings").mapLsp(buf_set_keymap)
+  return on_attach(client, bufnr)
 end
 
 -- lsps with default config

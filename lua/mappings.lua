@@ -222,14 +222,11 @@ end
 pluginKeys.mapLsp = function(mapbuf)
   -- rename
   mapbuf("n", "<leader>r", ":Lspsaga rename<CR>", opt)
-  -- code action
-  mapbuf("n", "<leader>ca", ":Lspsaga code_action<CR>", opt)
   -- change source/header
   mapbuf("n", "<leader>ch", "<cmd>ClangdSwitchSourceHeader<CR>", opt)
+  -- lsp
+  mapbuf("n", "gd", "<cmd>vim.lsp.buf.type_definition()<CR>", opt)
   -- go xx
-  mapbuf("n", "gd", ":Lspsaga goto_definition<CR>", opt)
-  mapbuf("n", "gh", ":Lspsaga hover_doc<CR>", opt)
-  mapbuf("n", "gf", ":Lspsaga finder def+ref<CR>", opt)
   mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
   mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
   mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)

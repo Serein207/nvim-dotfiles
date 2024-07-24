@@ -151,7 +151,7 @@ type `:CopilotAuth` to use copilot
 
 | Key Mapping  | Description                |
 | ------------ | -------------------------- |
-| `<leader>r`  | Rename Symbol              |
+| `<leader>ra` | Rename Symbol              |
 | `<leader>fm` | Code Formatting            |
 | `<leader>ca` | Code Action                |
 | `<leader>lh` | Toggle clangd Inlay Hints  |

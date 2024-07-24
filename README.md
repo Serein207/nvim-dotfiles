@@ -149,13 +149,14 @@ type `:CopilotAuth` to use copilot
 
 ### LSP Mappings
 
-| Key Mapping  | Description               |
-| ------------ | ------------------------- |
-| `<leader>r`  | Rename Symbol             |
-| `<leader>fm` | Code Formatting           |
-| `<leader>ca` | Code Action               |
-| `<leader>lh` | Toggle clangd Inlay Hints |
-| `<S-k>`      | Signature Help            |
+| Key Mapping  | Description                |
+| ------------ | -------------------------- |
+| `<leader>r`  | Rename Symbol              |
+| `<leader>fm` | Code Formatting            |
+| `<leader>ca` | Code Action                |
+| `<leader>lh` | Toggle clangd Inlay Hints  |
+| `<leader>ch` | Change C/C++ Header/Source |
+| `<S-k>`      | Signature Help             |
 
 ### CMake Mappings
 

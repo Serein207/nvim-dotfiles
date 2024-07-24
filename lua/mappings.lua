@@ -224,6 +224,8 @@ pluginKeys.mapLsp = function(mapbuf)
   mapbuf("n", "<leader>r", ":Lspsaga rename<CR>", opt)
   -- code action
   mapbuf("n", "<leader>ca", ":Lspsaga code_action<CR>", opt)
+  -- change source/header
+  mapbuf("n", "<leader>ch", "<cmd>ClangdSwitchSourceHeader<CR>", opt)
   -- go xx
   mapbuf("n", "gd", ":Lspsaga goto_definition<CR>", opt)
   mapbuf("n", "gh", ":Lspsaga hover_doc<CR>", opt)

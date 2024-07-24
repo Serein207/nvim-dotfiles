@@ -70,10 +70,25 @@ lspconfig.clangd.setup {
       end
     end, { buffer = bufnr, desc = "[l]sp [h]ints toggle" })
   end,
-  capabilities = capabilities,
+  root_dir = function(fname)
+    return require("lspconfig.util").root_pattern(
+      "Makefile",
+      "configure.ac",
+      "configure.in",
+      "config.h.in",
+      "meson.build",
+      "meson_options.txt",
+      "build.ninja"
+    )(fname) or require("lspconfig.util").root_pattern(
+      "compile_commands.json",
+      "compile_flags.txt"
+    )(fname) or require("lspconfig.util").find_git_ancestor(fname)
+  end,
+  capabilities = {
+    offsetEncoding = { "utf-16" },
+  },
   cmd = {
     "clangd",
-    "--offset-encoding=utf-16",
     "-j=12",
     "--background-index",
     "--clang-tidy",
@@ -83,6 +98,11 @@ lspconfig.clangd.setup {
     "--compile-commands-dir=build",
     "--pch-storage=disk",
     "--pch-storage=memory",
+  },
+  init_options = {
+    usePlaceholders = true,
+    completeUnimported = true,
+    clangdFileStatus = true,
   },
 }
 

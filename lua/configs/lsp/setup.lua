@@ -46,7 +46,30 @@ end
 
 -- cpp
 lspconfig.clangd.setup {
-  on_attach = LspKeybind,
+  on_attach = function(client, bufnr)
+    LspKeybind(client, bufnr)
+    require("clangd_extensions.inlay_hints").setup_autocmd()
+    require("clangd_extensions.inlay_hints").set_inlay_hints()
+    local group =
+      vim.api.nvim_create_augroup("clangd_no_inlay_hints_in_insert", { clear = true })
+
+    vim.keymap.set("n", "<leader>lh", function()
+      if require("clangd_extensions.inlay_hints").toggle_inlay_hints() then
+        vim.api.nvim_create_autocmd("InsertEnter", {
+          group = group,
+          buffer = bufnr,
+          callback = require("clangd_extensions.inlay_hints").disable_inlay_hints,
+        })
+        vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave" }, {
+          group = group,
+          buffer = bufnr,
+          callback = require("clangd_extensions.inlay_hints").set_inlay_hints,
+        })
+      else
+        vim.api.nvim_clear_autocmds { group = group, buffer = bufnr }
+      end
+    end, { buffer = bufnr, desc = "[l]sp [h]ints toggle" })
+  end,
   capabilities = capabilities,
   cmd = {
     "clangd",

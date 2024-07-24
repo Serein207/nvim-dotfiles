@@ -108,21 +108,23 @@ type `:CopilotAuth` to use copilot
 
 ### NERDTree Mappings
 
-| Key Mapping | Description                |
-| ----------- | -------------------------- |
-| `<A-m>`     | Toggle NERDTree            |
-| `<C-v>`     | Open File in Split Window  |
-| `<CR>`      | Open File or Folder        |
-| `i`         | Toggle gitignore Files     |
-| `.`         | Toggle Dotfiles            |
-| `<F5>`      | Refresh NERDTree           |
-| `a`         | Create File or Folder      |
-| `d`         | Remove File or Folder      |
-| `r`         | Rename File or Folder      |
-| `x`         | Cut File or Folder         |
-| `c`         | Copy File or Folder        |
-| `p`         | Paste File or Folder       |
-| `s`         | System Open File or Folder |
+| Key Mapping | Description                  |
+| ----------- | ---------------------------- |
+| `<A-m>`     | Toggle NERDTree              |
+| `<CR>`      | Open File or Folder          |
+| `i`         | Toggle gitignore Files       |
+| `v`         | Open File in Split Window    |
+| `.`         | Toggle Dotfiles              |
+| `<F5>`      | Refresh NERDTree             |
+| `a`         | Create File or Folder        |
+| `d`         | Remove File or Folder        |
+| `r`         | Rename File or Folder        |
+| `x`         | Cut File or Folder           |
+| `c`         | Copy File or Folder          |
+| `p`         | Paste File or Folder         |
+| `s`         | System Open File or Folder   |
+| `+`         | Use Current Folder as Root   |
+| `-`         | Change Root to Parent Folder |
 
 ### Telescope Mappings
 
@@ -149,18 +151,10 @@ type `:CopilotAuth` to use copilot
 
 | Key Mapping  | Description               |
 | ------------ | ------------------------- |
-| `gd`         | Go to Definition          |
-| `gh`         | Hover Doc                 |
-| `gf`         | Finder Def+Ref            |
-| `gD`         | Go to Declaration         |
-| `gi`         | Go to Implementation      |
-| `gr`         | Go to References          |
-| `gp`         | Show Line Diagnostics     |
-| `gk`         | Go to Previous Diagnostic |
-| `gj`         | Go to Next Diagnostic     |
 | `<leader>r`  | Rename Symbol             |
-| `<leader>f`  | Code Formatting           |
+| `<leader>fm` | Code Formatting           |
 | `<leader>ca` | Code Action               |
+| `<leader>lh` | Toggle clangd Inlay Hints |
 | `<S-k>`      | Signature Help            |
 
 ### CMake Mappings

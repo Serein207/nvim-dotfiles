@@ -20,6 +20,7 @@ return {
   "ahmedkhalf/project.nvim",
   "lewis6991/hover.nvim",
   "zbirenbaum/copilot.lua",
+  "p00f/clangd_extensions.nvim", -- clangd extension, some good stuff
   { "akinsho/toggleterm.nvim", version = "*", config = true },
   {
     "Civitasv/cmake-tools.nvim",

@@ -43,10 +43,6 @@ The entire mappings are defined in `lua/mappings.lua`.
 | `qq`         | Quit not Save       |
 | `<C-S>`      | Save                |
 
-### Multi Cursor
-
-refer [here](https://github.com/mg979/vim-visual-multi)
-
 ### Copilot
 
 type `:CopilotAuth` to use copilot

@@ -52,6 +52,9 @@ mapv2("n", "tf", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "terminal toggle floating term" })
 
+-- fold code
+mapv2("n", "zr", require("ufo").openAllFolds)
+mapv2("n", "zm", require("ufo").closeAllFolds)
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)

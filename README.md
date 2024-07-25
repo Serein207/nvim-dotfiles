@@ -98,6 +98,15 @@ type `:CopilotAuth` to use copilot
 | `<leader>bh` | Buffer Line Close Left  |
 | `<leader>bc` | Buffer Line Close       |
 
+### Code Fold Mappings
+
+| Key Mappings | Description                        |
+| ------------ | ---------------------------------- |
+| `za`         | Toggle the Code Fold at the Cursor |
+| `zj` `zk`    | Move Up/Down to the Next Fold      |
+| `zr`         | Open All Folds                     |
+| `zm`         | Close All Folds                    |
+
 ### leap Mappings
 
 | Key Mapping | Description |

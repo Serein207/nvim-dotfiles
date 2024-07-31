@@ -13,6 +13,7 @@ treesitter.setup {
     "css",
     "cpp",
     "cmake",
+    "slint",
   },
   -- 启用代码高亮模块
   highlight = {

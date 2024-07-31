@@ -7,6 +7,7 @@ conform.setup {
     html = { "prettier" },
     markdown = { "prettier" },
     cpp = { "clang-format" },
+    slint = { "slint-lsp" },
   },
   default_format_opts = {
     lsp_format = "fallback",

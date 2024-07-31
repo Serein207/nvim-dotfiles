@@ -6,7 +6,7 @@ require("mason").setup {
     "cmake",
     "bashls",
     "clangd",
-    "clang=format",
+    "clang-format",
     "codelldb",
     "lua_ls",
     "stylua",
@@ -14,6 +14,7 @@ require("mason").setup {
     "cssls",
     "prettier",
     "marksman",
+    "slint-lsp",
   },
 }
 
@@ -129,4 +130,11 @@ lspconfig.rust_analyzer.setup {
     },
   },
   on_attach = LspKeybind,
+}
+
+-- slint lsp
+lspconfig.slint_lsp.setup {
+  on_attach = LspKeybind,
+  on_init = on_init,
+  capabilities = capabilities,
 }

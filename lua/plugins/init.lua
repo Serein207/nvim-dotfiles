@@ -3,6 +3,7 @@ return {
   "williamboman/mason.nvim",
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   "stevearc/conform.nvim",
+  "slint-ui/vim-slint",
   {
     "kevinhwang91/nvim-ufo",
     dependencies = {
